@@ -42,3 +42,18 @@ for getting postings to a newsgroup with the last QA notes from the
 former release and doing a quick gatekeeper code review in our QA team
 examining the diff between the last releases to make sure hotfixes do
 really only fix the hot issue(s) :-).
+
+== How to use this example ==
+
+* You need Maven 3 to get this running, there is still an issue with Maven2 during deployment with this pom.
+* Check out the repository. Remove the {{{.git}}} directory, it is not needed.
+* Create a local subversion repository beneath {{{svnadmin create /Software/nobackup/svnrepo/}}}.
+* Create the needed sub directories:
+** {{{svn mkdir -m 'Initial' file:///Software/nobackup/svnrepo/multimodule/}}}
+** {{{svn mkdir -m 'Initial' file:///Software/nobackup/svnrepo/multimodule/releases}}}
+* Import the project: {{{svn import -m'Initial' . file:///Software/nobackup/svnrepo/multimodule/trunk}}}
+* Checkout the project into another location: {{{svn co file:///Software/nobackup/svnrepo/multimodule/trunk /tmp/multi-module-svn/}}}
+* Switch to {{{/tmp/multi-module-svn/}}}
+* Adapt the {{{distributionManagement}}} section.
+* Run {{{mvn clean deploy}}} to deploy a {{{SNAPSHOT}}}.
+* Run {{{mvn -B release:prepare release:perform}}}.
