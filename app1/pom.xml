@@ -6,12 +6,4 @@
         <version>1.16-SNAPSHOT</version>
     </parent>
     <artifactId>app1</artifactId>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-scm-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 </project>
