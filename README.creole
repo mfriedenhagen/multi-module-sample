@@ -1,4 +1,4 @@
-= Using a maven-release-plugin and maven-scm-plugin to tag all submodules of a multimodule project =
+= Using maven-release-plugin and maven-scm-plugin to tag all submodules of a multimodule project =
 
 == Rationale ==
 In our company we have a policy that every released artifact should
