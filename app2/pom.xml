@@ -3,7 +3,7 @@
     <parent>
         <artifactId>parent</artifactId>
         <groupId>de.friedenhagen.multimodule</groupId>
-        <version>1.13-SNAPSHOT</version>
+        <version>1.13</version>
     </parent>
     <artifactId>app2</artifactId>
     <scm>
