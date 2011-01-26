@@ -67,6 +67,7 @@
                                     <inherited>true</inherited>
                                     <phase>deploy</phase>
                                     <configuration>
+                                        <connectionUrl>${project.scm.connectionUrl}</connectionUrl>
                                         <tag>${project.artifactId}-${project.version}</tag>
                                     </configuration>
                                     <goals>
