@@ -60,7 +60,7 @@ really only fix the hot issue(s) :-).
 * Run {{{mvn -B release:prepare release:perform}}}.
 
 == How to use this example with GIT ==
-* Check out the repository to {{{${user.home}/Documents/workspace/multimodule.
+* Check out the repository to {{{${user.home}/Documents/workspace/multimodule}}}.
 * Switch to {{{git}}} branch: {{{git checkout git}}}
 * Adapt the {{{distributionManagement}}} section.
 * Commit your changes.
