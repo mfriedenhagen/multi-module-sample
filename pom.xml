@@ -6,8 +6,8 @@
     <packaging>pom</packaging>
     <name>parent</name>
     <scm>
-        <connection>scm:svn:file:///Software/nobackup/svnrepo/multimodule/trunk</connection>
-        <developerConnection>scm:svn:file:///Software/nobackup/svnrepo/multimodule/trunk</developerConnection>
+        <connection>scm:git:file:///${user.home}/Documents/workspace/multimodule/</connection>
+        <developerConnection>scm:git:file:///${user.home}/Documents/workspace/multimodule/</developerConnection>
     </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -41,7 +41,6 @@
                 <version>2.0-beta-9</version>
                 <inherited>true</inherited>
                 <configuration>
-                    <tagBase>file:///Software/nobackup/svnrepo/multimodule/releases/</tagBase>
                     <releaseProfiles>multimodule-tag-modules</releaseProfiles>
                 </configuration>
             </plugin>
@@ -68,8 +67,6 @@
                                     <inherited>true</inherited>
                                     <phase>deploy</phase>
                                     <configuration>
-                                        <goalsDirectory>..</goalsDirectory>
-                                        <tagBase>file:///Software/nobackup/svnrepo/multimodule/releases/</tagBase>
                                         <tag>${project.artifactId}-${project.version}</tag>
                                     </configuration>
                                     <goals>
