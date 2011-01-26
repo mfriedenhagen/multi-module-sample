@@ -6,10 +6,6 @@
         <version>1.15-SNAPSHOT</version>
     </parent>
     <artifactId>core</artifactId>
-    <scm>
-        <connection>${parent.scm.connection}</connection>
-        <developerConnection>${parent.scm.developerConnection}</developerConnection>
-    </scm>
     <build>
         <plugins>
             <plugin>
