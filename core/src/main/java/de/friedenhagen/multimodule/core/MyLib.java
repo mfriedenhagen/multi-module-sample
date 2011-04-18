@@ -3,9 +3,9 @@ package de.friedenhagen.multimodule.core;
 import java.io.PrintStream;
 
 /**
- * My fine App
+ * My fine Library.
  */
-public class MyApp {
+public class MyLib {
 
     /**
      * outstream
@@ -17,7 +17,7 @@ public class MyApp {
      *
      * @param out to print to.
      */
-    public MyApp(final PrintStream out) {
+    public MyLib(final PrintStream out) {
         this.out = out;
     }
 
