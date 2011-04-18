@@ -7,10 +7,10 @@
     </parent>
     <artifactId>app2</artifactId>
     <scm>
-         <connection>${parent.scm.connection}</connection>
-         <developerConnection>${parent.scm.developerConnection}</developerConnection>
-         <url>${parent.scm.url}</url>
-     </scm>
+        <connection>${project.parent.scm.connection}</connection>
+        <developerConnection>${project.parent.scm.developerConnection}</developerConnection>
+        <url>${project.parent.scm.url}</url>
+    </scm>
     <build>
         <plugins>
             <plugin>
