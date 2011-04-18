@@ -12,6 +12,17 @@
         <developerConnection>scm:git:git@github.com:mfriedenhagen/multi-module-sample.git</developerConnection>
         <url>http://github.com/mfriedenhagen/multi-module-sample/</url>
     </scm>
+    <developers>
+        <developer>
+            <id>mfriedenhagen</id>
+            <name>Mirko Friedenhagen</name>
+            <email>mfriedenhagen@example.com</email>
+            <organization>My, Myself &amp; I</organization>
+            <organizationUrl>${project.url}</organizationUrl>
+            <url>http://github.com/mfriedenhagen</url>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>

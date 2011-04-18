@@ -28,7 +28,7 @@ public class MyLib {
         out.println("I am tested");
     }
 
-    public void untested() {
-        out.println("I am not tested");
+    public String untested() {
+        return "untested";
     }
 }
