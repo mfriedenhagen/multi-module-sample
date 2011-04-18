@@ -10,7 +10,7 @@
     <scm>
         <connection>scm:git:git://github.com:mfriedenhagen/multi-module-sample.git</connection>
         <developerConnection>scm:git:git@github.com:mfriedenhagen/multi-module-sample.git</developerConnection>
-        <url>http://github.com:mfriedenhagen/multi-module-sample</url>
+        <url>http://github.com/mfriedenhagen/multi-module-sample/</url>
     </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
