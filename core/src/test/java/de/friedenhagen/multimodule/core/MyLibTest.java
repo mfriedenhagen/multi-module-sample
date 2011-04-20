@@ -19,6 +19,6 @@ public class MyLibTest {
         } finally {
             out.close();
         }
-        Assert.assertEquals("I am tested\n", stream.toString());
+        Assert.assertEquals("I am tested", stream.toString().trim());
     }
 }
