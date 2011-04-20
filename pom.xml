@@ -12,6 +12,10 @@
         <developerConnection>scm:git:git@github.com:mfriedenhagen/multi-module-sample.git</developerConnection>
         <url>http://github.com/mfriedenhagen/multi-module-sample/</url>
     </scm>
+    <ciManagement>
+        <system>Jenkins</system>
+        <url>http://huschteguzzel.de/hudson/job/test-multimodule/</url>
+    </ciManagement>
     <developers>
         <developer>
             <id>mfriedenhagen</id>
@@ -62,11 +66,6 @@
                     <releaseProfiles>multimodule-tag-modules</releaseProfiles>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.0-beta-3</version>
-            </plugin>
         </plugins>
     </build>
     <dependencyManagement>
@@ -89,6 +88,31 @@
         <module>app2</module>
     </modules>
     <profiles>
+        <profile>
+            <id>maven3-site</id>
+            <activation>
+                <file>
+                    <exists>${basedir}</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-site-plugin</artifactId>
+                        <version>3.0-beta-3</version>
+                        <executions>
+                            <execution>
+                                <id>attach-descriptor</id>
+                                <goals>
+                                    <goal>attach-descriptor</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
         <profile>
             <id>multimodule-tag-modules</id>
             <build>
