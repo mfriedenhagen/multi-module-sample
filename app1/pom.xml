@@ -7,6 +7,7 @@
     </parent>
     <artifactId>app1</artifactId>
     <packaging>jar</packaging>
+    <url>${project.parent.url}</url>
     <scm>
         <connection>${project.parent.scm.connection}</connection>
         <developerConnection>${project.parent.scm.developerConnection}</developerConnection>
