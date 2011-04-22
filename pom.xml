@@ -5,7 +5,8 @@
     <artifactId>parent</artifactId>
     <version>1.19-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>parent</name>    <properties>
+    <name>parent</name>
+    <properties>
         <cobertura-plugin.version>2.4</cobertura-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -30,6 +31,11 @@
                 </executions>
                 <configuration>
                     <reportPlugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-project-info-reports-plugin</artifactId>
+                            <version>2.3.1</version>
+                        </plugin>
                         <plugin>
                             <groupId>org.codehaus.mojo</groupId>
                             <artifactId>cobertura-maven-plugin</artifactId>
