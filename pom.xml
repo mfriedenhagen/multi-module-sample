@@ -8,6 +8,7 @@
     <name>parent</name>
     <properties>
         <cobertura-plugin.version>2.4</cobertura-plugin.version>
+        <maven-project-info-reports-plugin.version>2.3.1</maven-project-info-reports-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <build>
@@ -34,7 +35,7 @@
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-project-info-reports-plugin</artifactId>
-                            <version>2.3.1</version>
+                            <version>${maven-project-info-reports-plugin.version}</version>
                         </plugin>
                         <plugin>
                             <groupId>org.codehaus.mojo</groupId>
