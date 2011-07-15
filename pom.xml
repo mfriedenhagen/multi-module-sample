@@ -11,6 +11,7 @@
     </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <effectivePomLocation>${project.build.outputDirectory}/META-INF/maven/${project.groupId}/${project.artifactId}/effective-pom.xml</effectivePomLocation>
     </properties>
     <distributionManagement>
         <snapshotRepository>
@@ -56,7 +57,7 @@
                       <goal>effective-pom</goal>
                    </goals>
                    <configuration>
-                      <output>${project.build.outputDirectory}/META-INF/maven/${project.groupId}/${project.artifactId}/effective-pom.xml</output>
+                      <output>${effectivePomLocation}</output>
                    </configuration>
                   </execution>
               </executions>

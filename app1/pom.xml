@@ -7,6 +7,9 @@
     </parent>
     <artifactId>app1</artifactId>
     <packaging>war</packaging>
+    <properties>
+        <effectivePomLocation>${project.build.directory}/${project.build.finalName}/META-INF/maven/${project.groupId}/${project.artifactId}/effective-pom.xml</effectivePomLocation>
+    </properties>
     <build>
         <plugins>
             <plugin>
