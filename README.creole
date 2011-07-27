@@ -19,3 +19,6 @@ section from the parent pom defines this dependency as {{{org.apache.httpcompone
 This will percolate into the dependency tree of the core module. This might not be a problem as 4.0.1 should
 be compatible with 4.0.2 however the working of {{{org.seleniumhq.selenium::selenium-firefox-driver::2.0.0}}}
 was never tested with this version of httpclient.
+
+Using {{{<scope>provided</scope>}}} for {{{commons-logging::commons-logging::1.1.1}}} in the {{{dependencyManagement}}}
+section of the parent pom will exclude the jar in the war module {{{app1}}}.
