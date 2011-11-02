@@ -1,6 +1,6 @@
 = Effects of using dependencyManagement and transitive dependencies in a module =
 
-== Rationale ==
+== Overwriting transitive dependencies ==
 Definining a dependency in a Maven module and having a dependency management section
 might lead to strange dependency mismatches:
 
@@ -22,3 +22,12 @@ was never tested with this version of httpclient.
 
 Using {{{<scope>provided</scope>}}} for {{{commons-logging::commons-logging::1.1.1}}} in the {{{dependencyManagement}}}
 section of the parent pom will exclude the jar in the war module {{{app1}}}.
+
+== Inter-module dependencies ==
+
+This is an example for defining dependencies between modules in a multi-module project:
+* You want all modules to have the same {{{version}}}.
+* Only define this in the {{{parent}}} pom and in the {{{<parent>}}} section of the sub modules.
+* {{{app1}}} depends on {{{core}}}
+* Define the version of {{{core}}} to be used in the other modules in the {{{<dependencyManagement>}}} section of the parent 
+pom, so you may skip the version completely in the sub modules.
