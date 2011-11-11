@@ -1,6 +1,23 @@
-= Effects of using dependencyManagement and transitive dependencies in a module =
+= Effects of using pluginManagement, dependencyManagement and transitive dependencies in a module =
+
+== Objectives ==
+
+* Define versions, default scopes (and possibly exclusions) of dependencies *only once*.
+* Define configurations of plugins *only once*.
+
+== Scope of dependencies ==
+
+* To show the outcome of the dependency calculations, use:
+{{{
+mvn dependency:tree
+}}}
+
+* As can be seen, {{{core}}} has {{{junit}}} automatically defined in the right version
+  and scope {{{test}}}, while {{{app1}}} which depends on {{{core}}} takes only into
+  account those defined with {{{compile}}} and {{{provided}}}.
 
 == Overwriting transitive dependencies ==
+
 Definining a dependency in a Maven module and having a dependency management section
 might lead to unknown dependency mismatches:
 
@@ -14,10 +31,11 @@ While module core defines:
 }}}
 
 which whould include {{{org.apache.httpcomponents::httpclient::4.0.2}}}, the {{{dependencyManagement}}}
-section from the parent pom defines this dependency as {{{org.apache.httpcomponents::httpclient::4.0.1}}}.
+section from the parent pom defines this dependency as {{{org.apache.httpcomponents::httpclient::4.1.2}}}.
 
-This will percolate into the dependency tree of the core module. This might not be a problem as 4.0.1 should
-be compatible with 4.0.2 however the working of {{{org.seleniumhq.selenium::selenium-firefox-driver::2.0.0}}}
+This will percolate into the dependency tree of the {{{core}}} module as well as {{{app1}}}.
+This might not be a problem as 4.1.2 should be compatible with 4.0.2 however the working 
+of {{{org.seleniumhq.selenium::selenium-firefox-driver::2.0.0}}}
 was never tested with this version of httpclient.
 
 Using {{{<scope>provided</scope>}}} for {{{commons-logging::commons-logging::1.1.1}}} in the {{{dependencyManagement}}}
@@ -26,14 +44,17 @@ of {{{<exclusion>}}} elements for every single dependency depending transitively
 This is especially useful when you want to use an alternative logging framework like [[http://logback.qos.ch/|logback]] in conjunction with an alternative API like 
 [[http://www.slf4j.org/faq.html#excludingJCL|SLF4J]].
 
-== Inter-module dependencies ==
+== Inter-module dependencies using Maven properties ==
 
 This is an example for defining dependencies between modules in a multi-module project:
 * You want all modules to have the same {{{version}}}.
-* Only define this in the {{{parent}}} pom and in the {{{<parent>}}} section of the sub modules.
-* {{{app1}}} depends on {{{core}}}
+* Only define the {{{version}}} once in the {{{parent}}} pom and in the {{{<parent>}}} section of the sub modules.
+* {{{app1}}} depends on {{{core}}}.
 * Define the version of {{{core}}} to be used in the other modules in the {{{<dependencyManagement>}}} section of the parent 
 pom, so you may skip the version completely in the sub modules.
+* Use Maven properties like {{{${project.groupId}}}} or {{{${project.version}}}} when possible to avoid duplicated information
+  with the exception of the {{{parent}}} section.
+* With Maven 3.1.X it should be possible to avoid even this by using {{{relativePath>}}} in your derived poms.
 
 == Configuration of plugins ==
 
