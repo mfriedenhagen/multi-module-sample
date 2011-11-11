@@ -7,6 +7,9 @@
     </parent>
     <artifactId>app2</artifactId>
     <packaging>war</packaging>
+    <properties>
+        <effectivePomLocation>${warEffectivePomLocation}</effectivePomLocation>
+    </properties>
     <build>
         <plugins>
             <plugin>

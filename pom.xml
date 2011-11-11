@@ -13,6 +13,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <effectivePomLocation>${project.build.outputDirectory}/META-INF/maven/${project.groupId}/${project.artifactId}/effective-pom.xml</effectivePomLocation>
+        <warEffectivePomLocation>${project.build.directory}/${project.build.finalName}/META-INF/maven/${project.groupId}/${project.artifactId}/effective-pom.xml</warEffectivePomLocation>
     </properties>
     <distributionManagement>
         <snapshotRepository>
