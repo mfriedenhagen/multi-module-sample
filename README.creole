@@ -2,7 +2,7 @@
 
 == Overwriting transitive dependencies ==
 Definining a dependency in a Maven module and having a dependency management section
-might lead to strange dependency mismatches:
+might lead to unknown dependency mismatches:
 
 While module core defines:
 {{{
@@ -31,3 +31,9 @@ This is an example for defining dependencies between modules in a multi-module p
 * {{{app1}}} depends on {{{core}}}
 * Define the version of {{{core}}} to be used in the other modules in the {{{<dependencyManagement>}}} section of the parent 
 pom, so you may skip the version completely in the sub modules.
+
+== Configuration of plugins ==
+
+As can be seen, the two modules {{{app1}}} and {{{app2}}} both are projects with {{{<packaging>war</packaging>}}}). By
+declaring, that we do *not need* a {{{web.xml}}} file ({{{<failOnMissingWebXml>false</failOnMissingWebXml>}}} in the 
+{{{<pluginManagement}}} section for the {{{maven-war-plugin}}}, we do not need any entries in the {{{appN}}} poms.
