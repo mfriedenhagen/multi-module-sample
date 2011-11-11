@@ -21,7 +21,10 @@ be compatible with 4.0.2 however the working of {{{org.seleniumhq.selenium::sele
 was never tested with this version of httpclient.
 
 Using {{{<scope>provided</scope>}}} for {{{commons-logging::commons-logging::1.1.1}}} in the {{{dependencyManagement}}}
-section of the parent pom will exclude the jar in the war module {{{app1}}}.
+section of the parent pom will exclude the jar in the war module {{{app1}}}. This is an alternative to specifying loads
+of {{{<exclusion>}}} elements for every single dependency depending transitively on {{{commons-logging}}}.
+This is especially useful when you want to use an alternative logging framework like [[http://logback.qos.ch/|logback]] in conjunction with an alternative API like 
+[[http://www.slf4j.org/faq.html#excludingJCL|SLF4J]].
 
 == Inter-module dependencies ==
 
