@@ -6,16 +6,9 @@
         <version>1.12-SNAPSHOT</version>
     </parent>
     <artifactId>app1</artifactId>
+    <name>${project.artifactId}</name>
     <scm>
-        <connection>${parent.scm.connection}</connection>
-        <developerConnection>${parent.scm.developerConnection}</developerConnection>
+        <connection>${project.parent.scm.connection}</connection>
+        <developerConnection>${project.parent.scm.developerConnection}</developerConnection>
     </scm>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-scm-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 </project>
