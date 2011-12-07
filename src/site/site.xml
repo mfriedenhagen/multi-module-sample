@@ -11,7 +11,7 @@
     </skin>
     <body>
         <breadcrumbs>
-            <item name="${project.name}" href="./index.html"/>
+            <item name="${project.name}" href="index.html"/>
         </breadcrumbs>
         <menu ref="modules" inherit="top" />
         <menu ref="reports" inherit="bottom" />
