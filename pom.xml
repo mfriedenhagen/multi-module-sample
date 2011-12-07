@@ -37,7 +37,7 @@
     <distributionManagement>
         <site>
             <id>maven-site</id>
-            <url>file:///${java.io.tempDir}</url>
+            <url>file:///${java.io.tempdir}</url>
         </site>
     </distributionManagement>
 </project>
