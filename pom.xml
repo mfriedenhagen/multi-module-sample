@@ -79,18 +79,34 @@
             </build>
         </profile>
         <profile>
-            <id>plugins</id>
+            <id>plugin-management-in-execution</id>
             <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-enforcer-plugin</artifactId>
+                            <inherited>true</inherited>
+                            <executions>
+                                <execution>
+                                    <id>enforce-maven</id>
+                                    <goals>
+                                        <goal>enforce</goal>
+                                    </goals>
+                                    <configuration>
+                                        <rules>
+                                            <AlwaysPass />
+                                        </rules>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-enforcer-plugin</artifactId>
-                        <inherited>true</inherited>
-                        <configuration>
-                            <rules>
-                                <AlwaysPass />
-                            </rules>
-                        </configuration>
                     </plugin>
                 </plugins>
             </build>

@@ -1,9 +1,17 @@
-= Configuration using pluginManagement and plugins section =
+= Configuration using pluginManagement section =
 
 == Objectives ==
 
 Sample project for examining the different configurations of plugins
-in plugin-management.
+in plugin-management. 
+
+* When the configuration is given in the {{plugin}} section itself, 
+  it will be used in the {{{validate}}} phase as well as during 
+  invocation of {{{enforcer:enforce}}}.
+* When the configuration is given in a {{exection}} section,
+  it will be used *only* in the {{{validate}}} phase but not during 
+  invocation of {{{enforcer:enforce}}}.
+
 
 == mvn validate -Pplugin-management ==
 
@@ -77,4 +85,77 @@ in plugin-management.
 [INFO] Finished at: Mon Dec 12 21:17:12 CET 2011
 [INFO] Final Memory: 3M/81M
 [INFO] ------------------------------------------------------------------------
+}}}
+
+== mvn validate -Pplugin-management-in-execution ==
+
+{{{
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] parent
+[INFO] core
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building parent 1.12-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-maven) @ parent ---
+[INFO] Always pass!
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building core 1.12-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-maven) @ core ---
+[INFO] Always pass!
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] parent ............................................ SUCCESS [0.666s]
+[INFO] core .............................................. SUCCESS [0.003s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.018s
+[INFO] Finished at: Mon Dec 12 21:24:26 CET 2011
+[INFO] Final Memory: 3M/81M
+[INFO] ------------------------------------------------------------------------
+}}}
+
+== mvn enforcer:enforce -Pplugin-management-in-execution ==
+
+{{{
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] parent
+[INFO] core
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building parent 1.12-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (default-cli) @ parent ---
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] parent ............................................ FAILURE [0.598s]
+[INFO] core .............................................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.998s
+[INFO] Finished at: Mon Dec 12 21:24:52 CET 2011
+[INFO] Final Memory: 3M/81M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:1.0.1:enforce (default-cli) on project parent: The parameters 'rules' for goal org.apache.maven.plugins:maven-enforcer-plugin:1.0.1:enforce are missing or invalid -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginParameterException
 }}}
