@@ -5,15 +5,16 @@
 Sample project for examining the different configurations of plugins
 in plugin-management. 
 
-* When the configuration is given in the {{plugin}} section itself, 
+* When the configuration is given in the {{{plugin}}} section itself, 
   it will be used in the {{{validate}}} phase as well as during 
   invocation of {{{enforcer:enforce}}}.
-* When the configuration is given in a {{exection}} section,
+* When the configuration is given in a {{{exection}}} section,
   it will be used *only* in the {{{validate}}} phase but not during 
   invocation of {{{enforcer:enforce}}}.
 
+== Global configuration section ==
 
-== mvn validate -Pplugin-management ==
+=== mvn validate -Pplugin-management ===
 
 {{{
 [INFO] Scanning for projects...
@@ -50,7 +51,7 @@ in plugin-management.
 [INFO] ------------------------------------------------------------------------
 }}}
 
-== mvn enforcer:enforce -Pplugin-management ==
+=== mvn enforcer:enforce -Pplugin-management ===
 
 {{{
 [INFO] Scanning for projects...
@@ -87,7 +88,9 @@ in plugin-management.
 [INFO] ------------------------------------------------------------------------
 }}}
 
-== mvn validate -Pplugin-management-in-execution ==
+== Execution configuration section ==
+
+=== mvn validate -Pplugin-management-in-execution ===
 
 {{{
 [INFO] Scanning for projects...
@@ -124,7 +127,7 @@ in plugin-management.
 [INFO] ------------------------------------------------------------------------
 }}}
 
-== mvn enforcer:enforce -Pplugin-management-in-execution ==
+=== mvn enforcer:enforce -Pplugin-management-in-execution ===
 
 {{{
 [INFO] Scanning for projects...
