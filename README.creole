@@ -1,13 +1,80 @@
-= help:effective-pom not resolving properties / attaching module name to url automatically =
+= Configuration using pluginManagement and plugins section =
 
-== Issue ==
+== Objectives ==
 
-When defining the {{{scm}}} in the parent and referencing it in the
-module projects I would expect {{{help:effective-pom}}} to resolve these.
+Sample project for examining the different configurations of plugins
+in plugin-management.
 
-Right now running {{{mvn clean install site site:stage}}} is resolving
-this IMO correctly as specified while in the the output of 
-{{{help:effective-pom}}} leaves the properties alone.
+== mvn validate -Pplugin-management ==
 
-On the other hand, the url will be extended by the name of the module,
-which might not be correct in every circumstance.
+{{{
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] parent
+[INFO] core
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building parent 1.12-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-maven) @ parent ---
+[INFO] Always pass!
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building core 1.12-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-maven) @ core ---
+[INFO] Always pass!
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] parent ............................................ SUCCESS [0.612s]
+[INFO] core .............................................. SUCCESS [0.002s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.966s
+[INFO] Finished at: Mon Dec 12 21:17:58 CET 2011
+[INFO] Final Memory: 3M/81M
+[INFO] ------------------------------------------------------------------------
+}}}
+
+== mvn enforcer:enforce -Pplugin-management ==
+
+{{{
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] parent
+[INFO] core
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building parent 1.12-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (default-cli) @ parent ---
+[INFO] Always pass!
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building core 1.12-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (default-cli) @ core ---
+[INFO] Always pass!
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] parent ............................................ SUCCESS [0.584s]
+[INFO] core .............................................. SUCCESS [0.002s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.003s
+[INFO] Finished at: Mon Dec 12 21:17:12 CET 2011
+[INFO] Final Memory: 3M/81M
+[INFO] ------------------------------------------------------------------------
+}}}

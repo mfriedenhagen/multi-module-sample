@@ -16,8 +16,6 @@
     </properties>
     <modules>
         <module>core</module>
-        <module>app1</module>
-        <module>app2</module>
     </modules>
     <build>
         <pluginManagement>
