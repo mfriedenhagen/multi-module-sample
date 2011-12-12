@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.friedenhagen.multimodule</groupId>
     <artifactId>parent</artifactId>
@@ -40,4 +41,58 @@
             <url>file:///${java.io.tempdir}</url>
         </site>
     </distributionManagement>
+    <profiles>
+        <profile>
+            <id>plugin-management</id>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-enforcer-plugin</artifactId>
+                            <version>1.0.1</version>
+                            <inherited>true</inherited>
+                            <executions>
+                                <execution>
+                                    <id>enforce-maven</id>
+                                    <goals>
+                                        <goal>enforce</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                            <configuration>
+                                <rules>
+                                    <AlwaysPass />
+                                </rules>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>plugins</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                        <version>1.0.1</version>
+                        <inherited>true</inherited>
+                        <configuration>
+                            <rules>
+                                <AlwaysPass />
+                            </rules>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
