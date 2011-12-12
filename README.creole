@@ -10,7 +10,11 @@ in plugin-management.
   invocation of {{{enforcer:enforce}}}.
 * When the configuration is given in a {{{exection}}} section,
   it will be used **only** in the {{{validate}}} phase but not during 
-  invocation of {{{enforcer:enforce}}} so the later one will **fail**!
+  invocation of {{{enforcer:enforce}}} so the later one will **fail**
+  as no configuration is given for the {{{default-cli}}} lifecycle!
+* For further information see 
+  [[http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html|maven lifecycle]]
+  and [[http://maven.apache.org/guides/mini/guide-default-execution-ids.html|maven executions]].
 
 == Global configuration section ==
 
