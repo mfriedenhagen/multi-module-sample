@@ -30,13 +30,13 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
-        <maven-release-plugin.version>2.0-beta-9</maven-release-plugin.version>
+        <maven-release-plugin.version>2.2.1</maven-release-plugin.version>
         <maven-site-plugin.version>3.0</maven-site-plugin.version>
-        <maven-project-info-reports-plugin.version>2.3.1</maven-project-info-reports-plugin.version>
-        <maven-jxr-plugin.version>2.2</maven-jxr-plugin.version>
-        <maven-checkstyle-plugin.version>2.6</maven-checkstyle-plugin.version>
+        <maven-project-info-reports-plugin.version>2.4</maven-project-info-reports-plugin.version>
+        <maven-jxr-plugin.version>2.3</maven-jxr-plugin.version>
+        <maven-checkstyle-plugin.version>2.8</maven-checkstyle-plugin.version>
         <maven-javadoc-plugin.version>2.8</maven-javadoc-plugin.version>
-        <cobertura-maven-plugin.version>2.4</cobertura-maven-plugin.version>
+        <cobertura-maven-plugin.version>2.5.1</cobertura-maven-plugin.version>
     </properties>
     <distributionManagement>
         <snapshotRepository>
