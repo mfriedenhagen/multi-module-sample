@@ -143,34 +143,4 @@
         <module>app1</module>
         <module>app2</module>
     </modules>
-    <profiles>
-        <profile>
-            <id>multimodule-tag-modules</id>
-            <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-scm-plugin</artifactId>
-                            <version>1.2</version>
-                            <executions>
-                                <execution>
-                                    <id>multimodule-tag-modules</id>
-                                    <inherited>true</inherited>
-                                    <phase>deploy</phase>
-                                    <configuration>
-                                        <connectionUrl>${project.scm.connectionUrl}</connectionUrl>
-                                        <tag>${project.artifactId}-${project.version}</tag>
-                                    </configuration>
-                                    <goals>
-                                        <goal>tag</goal>
-                                    </goals>
-                                </execution>
-                            </executions>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
-            </build>
-        </profile>
-    </profiles>
 </project>
