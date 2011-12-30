@@ -4,6 +4,7 @@
         <artifactId>parent</artifactId>
         <groupId>de.friedenhagen.multimodule</groupId>
         <version>1.19-SNAPSHOT</version>
+        <relativePath>../parent</relativePath>
     </parent>
     <artifactId>app2</artifactId>
     <name>${project.artifactId}</name>

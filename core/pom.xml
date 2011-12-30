@@ -5,6 +5,7 @@
         <artifactId>parent</artifactId>
         <groupId>de.friedenhagen.multimodule</groupId>
         <version>1.19-SNAPSHOT</version>
+        <relativePath>../parent</relativePath>
     </parent>
     <artifactId>core</artifactId>
     <name>${project.artifactId}</name>

@@ -4,4 +4,13 @@
 
 Using the {{{configs}}} module to keep the configuration for checkstyle
 in a common place. Let the {{{configs}}} jar be an extension to the
-build section of the parent pom.
+build section of the parent pom. Does not work with the release-plugin,
+as this is a chicken-egg situation, where we need the release of a module
+as an extension in the parent.
+
+Extracting a base pom does not work either :-(. Then we have to invoke:
+{{{
+mvn -U -N clean deploy ; mvn -U -f configs/pom.xml clean deploy ; mvn -U clean deploy ; mvn -U site site:stage
+}}} 
+
+Does, but feels clumsy and releases do not work either.
