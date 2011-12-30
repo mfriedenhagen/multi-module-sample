@@ -173,7 +173,7 @@
                     <dependency>
                         <groupId>de.friedenhagen.multimodule</groupId>
                         <artifactId>configs</artifactId>
-                        <version>1.19-SNAPSHOT</version>
+                        <version>${project.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
