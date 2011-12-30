@@ -4,12 +4,11 @@ import java.io.PrintStream;
 
 /**
  * My fine Library.
- * @author mirko
  */
 public class MyLib {
 
     /**
-     * outstream.
+     * outstream
      */
     private final PrintStream out;
 
@@ -29,9 +28,6 @@ public class MyLib {
         out.println("I am tested");
     }
 
-    /**
-     * My untested method.
-     */
     public String untested() {
         return "untested";
     }
