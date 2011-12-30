@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.friedenhagen.multimodule</groupId>
     <artifactId>parent</artifactId>
-    <version>1.19</version>
+    <version>1.20-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>parent</name>
     <url>http://github.com/mfriedenhagen/multi-module-sample/</url>
