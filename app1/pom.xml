@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>de.friedenhagen.multimodule</groupId>
             <artifactId>core</artifactId>
         </dependency>
         <dependency>
