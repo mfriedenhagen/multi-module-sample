@@ -70,6 +70,7 @@
                     <version>${maven-release-plugin.version}</version>
                     <inherited>true</inherited>
                     <configuration>
+                        <tagNameFormat>@{project.groupId}-@{project.version}</tagNameFormat>
                         <goals>clean install deploy</goals>
                     </configuration>
                 </plugin>
