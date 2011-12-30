@@ -194,7 +194,7 @@
                     <dependency>
                         <groupId>de.friedenhagen.multimodule</groupId>
                         <artifactId>configs</artifactId>
-                        <version>${project.version}</version>
+                        <version>1.22-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
             </plugin>
