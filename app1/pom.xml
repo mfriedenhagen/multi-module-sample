@@ -6,6 +6,7 @@
         <version>1.19-SNAPSHOT</version>
     </parent>
     <artifactId>app1</artifactId>
+    <name>${project.artifactId}</name>
     <packaging>jar</packaging>
     <dependencies>
         <dependency>

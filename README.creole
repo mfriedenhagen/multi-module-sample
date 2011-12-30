@@ -1,4 +1,7 @@
-= Tyring to verify http://jira.codehaus.org/browse/MJAVADOC-116 =
+= Tyring to put configuration for checkstyle in a config jar =
 
 == Rationale ==
-I want to see the outcome of [[http://jira.codehaus.org/browse/MJAVADOC-116|MJAVADOC-116] and related stuff.
+
+Using the {{{configs}}} module to keep the configuration for checkstyle
+in a common place. Let the {{{configs}}} jar be an extension to the
+build section of the parent pom.

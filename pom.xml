@@ -42,14 +42,14 @@
     </properties>
     <distributionManagement>
         <snapshotRepository>
-            <id>ui-snapshot</id>
+            <id>ui-snapshots</id>
             <uniqueVersion>true</uniqueVersion>
-            <url>http://localhost:8080/nexus/content/repositories/snapshots/</url>
+            <url>http://localhost:8081/artifactory/libs-snapshot-local/</url>
         </snapshotRepository>
         <repository>
-            <id>ui-staging</id>
+            <id>ui-releases</id>
             <uniqueVersion>true</uniqueVersion>
-            <url>http://localhost:8080/nexus/content/repositories/staging/</url>
+            <url>http://localhost:8081/artifactory/libs-release-local/</url>
         </repository>
         <site>
             <id>ui-site</id>
@@ -70,12 +70,32 @@
                     <artifactId>maven-release-plugin</artifactId>
                     <version>${maven-release-plugin.version}</version>
                     <inherited>true</inherited>
+                    <configuration>
+                        <goals>clean install deploy</goals>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>${maven-site-plugin.version}</version>
                     <inherited>true</inherited>
+                    <executions>
+                        <execution>
+                            <id>attach-descriptor</id>
+                            <goals>
+                                <goal>attach-descriptor</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>${maven-checkstyle-plugin.version}</version>
+                    <configuration>
+                        <enableRulesSummary>false</enableRulesSummary>
+                        <configLocation>de/friedenhagen/multimodule/checkstyle-ruleset.xml</configLocation>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -147,19 +167,14 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>attach-descriptor</id>
-                        <goals>
-                            <goal>attach-descriptor</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
+        <extensions>
+            <extension>
+                <groupId>de.friedenhagen.multimodule</groupId>
+                <artifactId>configs</artifactId>
+                <version>1.19-SNAPSHOT</version>
+            </extension>
+        </extensions>
     </build>
     <reporting>
         <plugins>
@@ -179,6 +194,7 @@
                 <version>${maven-checkstyle-plugin.version}</version>
                 <configuration>
                     <enableRulesSummary>false</enableRulesSummary>
+                    <configLocation>de/friedenhagen/multimodule/checkstyle-ruleset.xml</configLocation>
                 </configuration>
             </plugin>
             <plugin>
@@ -243,6 +259,7 @@
         </dependencies>
     </dependencyManagement>
     <modules>
+        <module>configs</module>
         <module>core</module>
         <module>app1</module>
         <module>app2</module>
