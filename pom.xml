@@ -30,7 +30,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4j.version>1.6.4</slf4j.version>
         <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
-        <maven-release-plugin.version>2.2.1</maven-release-plugin.version>
+        <maven-release-plugin.version>2.2.2</maven-release-plugin.version>
         <maven-site-plugin.version>3.0</maven-site-plugin.version>
         <maven-project-info-reports-plugin.version>2.4</maven-project-info-reports-plugin.version>
         <maven-jxr-plugin.version>2.3</maven-jxr-plugin.version>
