@@ -3,7 +3,7 @@
     <parent>
         <artifactId>parent</artifactId>
         <groupId>de.friedenhagen.multimodule</groupId>
-        <version>1.21</version>
+        <version>1.22-SNAPSHOT</version>
     </parent>
     <artifactId>core</artifactId>
     <name>${project.artifactId}</name>
