@@ -40,6 +40,7 @@
         <maven-javadoc-plugin.version>2.8</maven-javadoc-plugin.version>
         <cobertura-maven-plugin.version>2.5.1</cobertura-maven-plugin.version>
         <findbugs-maven-plugin.version>2.3.3</findbugs-maven-plugin.version>
+        <findbugs-maven-plugin.autoVersionSubmodules>true</findbugs-maven-plugin.autoVersionSubmodules>
         <maven-enforcer-plugin.version>1.0.1</maven-enforcer-plugin.version>
     </properties>
     <distributionManagement>
@@ -91,6 +92,7 @@
                     <version>${maven-release-plugin.version}</version>
                     <inherited>true</inherited>
                     <configuration>
+                        <autoVersionSubmodules>${findbugs-maven-plugin.autoVersionSubmodules}</autoVersionSubmodules>
                         <tagNameFormat>@{project.groupId}-@{project.version}</tagNameFormat>
                         <goals>clean install deploy</goals>
                     </configuration>
