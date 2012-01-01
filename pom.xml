@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.friedenhagen.multimodule</groupId>
     <artifactId>parent</artifactId>
-    <version>1.25-SNAPSHOT</version>
+    <version>1.25</version>
     <packaging>pom</packaging>
     <name>parent</name>
     <url>http://github.com/mfriedenhagen/multi-module-sample/</url>
@@ -197,7 +197,7 @@
                     <dependency>
                         <groupId>de.friedenhagen.multimodule</groupId>
                         <artifactId>configs</artifactId>
-                        <version>1.25-SNAPSHOT</version>
+                        <version>1.25</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -209,7 +209,7 @@
                     <dependency>
                         <groupId>de.friedenhagen.multimodule</groupId>
                         <artifactId>configs</artifactId>
-                        <version>1.25-SNAPSHOT</version>
+                        <version>1.25</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -274,7 +274,7 @@
             <dependency>
                 <groupId>de.friedenhagen.multimodule</groupId>
                 <artifactId>core</artifactId>
-                <version>1.25-SNAPSHOT</version>
+                <version>1.25</version>
             </dependency>
             <dependency>
                 <groupId>commons-logging</groupId>
