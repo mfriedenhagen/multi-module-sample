@@ -6,4 +6,5 @@
         <version>1.12-SNAPSHOT</version>
     </parent>
     <artifactId>app1</artifactId>
+    <packaging>war</packaging>
 </project>

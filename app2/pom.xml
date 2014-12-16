@@ -7,4 +7,5 @@
         <relativePath>../pom1/pom.xml</relativePath>
     </parent>
     <artifactId>app2</artifactId>
+    <packaging>war</packaging>
 </project>
