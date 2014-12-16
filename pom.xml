@@ -48,6 +48,7 @@
         </plugins>
     </build>
     <modules>
+        <module>pom1</module>
         <module>core</module>
         <module>app1</module>
         <module>app2</module>
