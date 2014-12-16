@@ -55,7 +55,7 @@
                     <version>2.13</version>
                     <executions>
                         <execution>
-                            <id>default-check</id>
+                            <id>default-checkstyle</id>
                             <phase>verify</phase>
                             <goals>
                                 <goal>checkstyle</goal>
