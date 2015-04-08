@@ -7,15 +7,14 @@
     </parent>
     <artifactId>app1</artifactId>
     <packaging>war</packaging>
-    <properties>
-        <effectivePomLocation>${project.build.directory}/${project.build.finalName}/META-INF/maven/${project.groupId}/${project.artifactId}/effective-pom.xml</effectivePomLocation>
-    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>de.friedenhagen.multimodule</groupId>
+            <artifactId>core</artifactId>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-scm-plugin</artifactId>
-            </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-war-plugin</artifactId>

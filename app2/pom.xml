@@ -6,12 +6,10 @@
         <version>1.19-SNAPSHOT</version>
     </parent>
     <artifactId>app2</artifactId>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-scm-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+    <dependencies>
+        <dependency>
+            <groupId>de.friedenhagen.multimodule</groupId>
+            <artifactId>core</artifactId>
+        </dependency>
+    </dependencies>
 </project>
