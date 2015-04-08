@@ -2,13 +2,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.friedenhagen.multimodule</groupId>
     <artifactId>parent</artifactId>
-    <version>1.22-SNAPSHOT</version>
+    <version>1.22</version>
     <packaging>pom</packaging>
     <name>parent</name>
     <scm>
         <connection>scm:git:file:///tmp/multi-module-sample/</connection>
         <developerConnection>scm:git:file:///tmp/multi-module-sample/</developerConnection>
-      <tag>HEAD</tag>
+      <tag>release-test-plugin-tests-1.22</tag>
   </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,7 +24,7 @@
             <dependency>
                 <groupId>de.friedenhagen.multimodule</groupId>
                 <artifactId>core</artifactId>
-                <version>1.22-SNAPSHOT</version>
+                <version>1.22</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
