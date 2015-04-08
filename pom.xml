@@ -38,7 +38,7 @@
                     <executions>
                         <execution>
                             <id>default-run-perform-goals</id>
-                            <phase>org.apache.maven.plugins:maven-release-plugin:run-perform-goals</phase>
+                            <phase>release:run-perform-goals</phase>
                             <goals>
                                 <goal>run</goal>
                             </goals>
