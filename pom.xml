@@ -16,6 +16,7 @@
         <goals>verify</goals>
         <pushChanges>false</pushChanges>
         <localCheckout>true</localCheckout>
+        <stagingRepository>file:///tmp/myrepo</stagingRepository>
     </properties>
     <dependencyManagement>
         <dependencies>
